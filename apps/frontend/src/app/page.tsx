@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { BrandLogo } from '@/components/brand-logo';
 
@@ -9,6 +10,7 @@ const ACCESS_LEVELS = [
     cta: 'Enter Workspace',
     href: '/login?role=user',
     variant: 'light' as const,
+    icon: '/user-icon.png',
   },
   {
     role: 'Administrator',
@@ -17,6 +19,7 @@ const ACCESS_LEVELS = [
     cta: 'Enter Portal',
     href: '/login?role=admin',
     variant: 'dark' as const,
+    icon: '/admin-icon.png',
   },
 ];
 
@@ -48,7 +51,8 @@ export default function LandingPage() {
                 }`}
               >
                 <div>
-                  <h2 className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-blue-700'}`}>
+                  <Image src={level.icon} alt="" width={56} height={56} className="h-14 w-14" />
+                  <h2 className={`mt-5 text-xl font-semibold ${isDark ? 'text-white' : 'text-blue-700'}`}>
                     {level.role}
                   </h2>
                   <p className={`mt-3 text-sm leading-6 ${isDark ? 'text-blue-50' : 'text-gray-600'}`}>
