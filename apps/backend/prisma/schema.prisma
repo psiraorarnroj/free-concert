@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum ReservationAction {
+  RESERVE
+  CANCEL
+}
+
+model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  passwordHash String
+  name         String
+  role         Role          @default(USER)
+  createdAt    DateTime      @default(now())
+  reservations Reservation[]
+}
+
+model Concert {
+  id           String        @id @default(uuid())
+  name         String
+  description  String
+  totalSeats   Int
+  createdAt    DateTime      @default(now())
+  reservations Reservation[]
+}
+
+// One row per active reservation; cancelling removes the row but appends
+// to ReservationLog so the admin audit trail keeps full history.
+model Reservation {
+  id        String   @id @default(uuid())
+  userId    String
+  concertId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  concert Concert @relation(fields: [concertId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, concertId])
+}
+
+// Append-only audit trail of reserve/cancel actions for the admin history view.
+model ReservationLog {
+  id          String            @id @default(uuid())
+  userId      String
+  username    String
+  concertId   String
+  concertName String
+  action      ReservationAction
+  createdAt   DateTime          @default(now())
+}
