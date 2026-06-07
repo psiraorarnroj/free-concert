@@ -98,7 +98,7 @@ export default function UserHomePage() {
                     type="button"
                     onClick={() => handleCancel(concert)}
                     disabled={pendingId === concert.id}
-                    className="rounded-md bg-brand-red px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-red disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-md bg-brand-red px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-red-dark disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {pendingId === concert.id ? 'Cancelling…' : 'Cancel'}
                   </button>

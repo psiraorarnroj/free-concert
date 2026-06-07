@@ -56,8 +56,8 @@ export default function AdminHistoryPage() {
     <DashboardShell title="Admin" navItems={NAV_ITEMS} switchHref="/login?role=user" switchLabel="Switch to user">
       <h2 className="text-xl font-bold text-gray-900">History</h2>
 
-      <div className="mt-6 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-        <table className="min-w-full divide-y divide-gray-200 text-sm">
+      <div className="mt-6 overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
+        <table className="min-w-[640px] w-full divide-y divide-gray-200 text-sm">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Date time</th>
