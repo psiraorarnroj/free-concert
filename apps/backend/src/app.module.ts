@@ -5,11 +5,19 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
+import { ConcertsModule } from './concerts/concerts.module';
+import { ReservationsModule } from './reservations/reservations.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { RolesGuard } from './auth/guards/roles.guard';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, AuthModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    PrismaModule,
+    AuthModule,
+    ConcertsModule,
+    ReservationsModule,
+  ],
   controllers: [AppController],
   providers: [
     AppService,

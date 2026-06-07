@@ -28,6 +28,7 @@ coverage/
 # IDE
 .vscode/
 .idea/
+.claude/
 
 # typescript
 *.tsbuildinfo
