@@ -4,7 +4,7 @@ Full-stack assignment app — Next.js frontend + NestJS backend + PostgreSQL.
 
 ## Project structure
 
-```
+```text
 apps/backend    NestJS API (Prisma + PostgreSQL, JWT auth)
 apps/frontend   Next.js app (Tailwind CSS)
 docker-compose.yml
