@@ -48,7 +48,7 @@ export function DashboardShell({
                   href={item.href}
                   className={`flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                     item.active
-                      ? 'bg-blue-50 text-blue-700'
+                      ? 'bg-brand-active text-brand-blue'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >

@@ -78,7 +78,7 @@ function LoginForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-md bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-md bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? 'Logging in…' : 'Login'}
         </button>
@@ -86,7 +86,7 @@ function LoginForm() {
 
       <p className="mt-6 text-center text-sm text-gray-600">
         Don&rsquo;t have an account?{' '}
-        <Link href={signupHref} className="font-medium text-blue-700 hover:underline">
+        <Link href={signupHref} className="font-medium text-brand-blue hover:underline">
           Create an account
         </Link>
       </p>

@@ -14,7 +14,7 @@ export function ConcertCard({
 }) {
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-      <h3 className="text-lg font-semibold text-blue-600">{name}</h3>
+      <h3 className="text-lg font-semibold text-brand-cyan">{name}</h3>
       <p className="mt-3 border-t border-gray-100 pt-3 text-sm leading-6 text-gray-600">
         {description}
       </p>

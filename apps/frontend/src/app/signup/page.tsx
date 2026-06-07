@@ -70,7 +70,7 @@ function SignupForm() {
     >
       <h1 className="text-center text-2xl font-bold text-gray-900">Sign Up</h1>
       {role === 'ADMIN' ? (
-        <p className="mt-2 text-center text-xs font-medium uppercase tracking-wide text-blue-700">
+        <p className="mt-2 text-center text-xs font-medium uppercase tracking-wide text-brand-blue">
           Administrator account
         </p>
       ) : null}
@@ -120,7 +120,7 @@ function SignupForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-md bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-md bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? 'Creating account…' : 'Create an account'}
         </button>
@@ -128,7 +128,7 @@ function SignupForm() {
 
       <p className="mt-6 text-center text-sm text-gray-600">
         Already have an account?{' '}
-        <Link href={loginHref} className="font-medium text-blue-700 hover:underline">
+        <Link href={loginHref} className="font-medium text-brand-blue hover:underline">
           Login
         </Link>
       </p>

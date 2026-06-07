@@ -47,15 +47,15 @@ export default function LandingPage() {
               <div
                 key={level.role}
                 className={`flex flex-col justify-between rounded-xl border p-6 shadow-sm sm:p-8 ${
-                  isDark ? 'border-blue-700 bg-blue-700 text-white' : 'border-gray-200 bg-white text-gray-900'
+                  isDark ? 'border-brand-blue bg-brand-blue text-white' : 'border-gray-200 bg-white text-gray-900'
                 }`}
               >
                 <div>
                   <Image src={level.icon} alt="" width={56} height={56} className="h-14 w-14" />
-                  <h2 className={`mt-5 text-xl font-semibold ${isDark ? 'text-white' : 'text-blue-700'}`}>
+                  <h2 className={`mt-5 text-xl font-semibold ${isDark ? 'text-white' : 'text-brand-blue'}`}>
                     {level.role}
                   </h2>
-                  <p className={`mt-3 text-sm leading-6 ${isDark ? 'text-blue-50' : 'text-gray-600'}`}>
+                  <p className={`mt-3 text-sm leading-6 ${isDark ? 'text-brand-active' : 'text-gray-600'}`}>
                     {level.description}
                   </p>
                 </div>
@@ -63,8 +63,8 @@ export default function LandingPage() {
                   href={level.href}
                   className={`mt-8 inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition-colors ${
                     isDark
-                      ? 'bg-white text-blue-700 hover:bg-blue-50'
-                      : 'bg-blue-700 text-white hover:bg-blue-800'
+                      ? 'bg-white text-brand-blue hover:bg-brand-active'
+                      : 'bg-brand-blue text-white hover:bg-brand-blue-dark'
                   }`}
                 >
                   {level.cta} <span aria-hidden className="ml-2">→</span>

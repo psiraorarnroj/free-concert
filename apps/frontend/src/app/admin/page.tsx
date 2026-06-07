@@ -23,9 +23,9 @@ const STAT_CARDS: Array<{
   icon: typeof PersonIcon;
   className: string;
 }> = [
-  { key: 'totalSeats', label: 'Total of seats', icon: PersonIcon, className: 'bg-blue-700' },
-  { key: 'reserve', label: 'Reserve', icon: AwardIcon, className: 'bg-emerald-600' },
-  { key: 'cancel', label: 'Cancel', icon: XCircleIcon, className: 'bg-red-400' },
+  { key: 'totalSeats', label: 'Total of seats', icon: PersonIcon, className: 'bg-brand-blue' },
+  { key: 'reserve', label: 'Reserve', icon: AwardIcon, className: 'bg-brand-green' },
+  { key: 'cancel', label: 'Cancel', icon: XCircleIcon, className: 'bg-brand-red' },
 ];
 
 export default function AdminHomePage() {
@@ -151,7 +151,7 @@ export default function AdminHomePage() {
             type="button"
             onClick={() => setTab(value)}
             className={`-mb-px border-b-2 px-1 pb-3 text-sm font-semibold capitalize transition-colors ${
-              tab === value ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700'
+              tab === value ? 'border-brand-cyan text-brand-cyan' : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}
           >
             {value}
@@ -177,7 +177,7 @@ export default function AdminHomePage() {
                     <button
                       type="button"
                       onClick={() => setPendingDelete(concert)}
-                      className="rounded-md bg-red-500 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-600"
+                      className="rounded-md bg-brand-red px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-red-dark"
                     >
                       Delete
                     </button>
@@ -188,7 +188,7 @@ export default function AdminHomePage() {
           )
         ) : (
           <div className="max-w-xl rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="text-lg font-semibold text-blue-600">Create</h2>
+            <h2 className="text-lg font-semibold text-brand-cyan">Create</h2>
             <form onSubmit={handleCreate} className="mt-4 space-y-5 border-t border-gray-100 pt-5">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <FormField
@@ -223,18 +223,18 @@ export default function AdminHomePage() {
                   placeholder="Please input description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className={`mt-1 block w-full rounded-md border px-3 py-2 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 ${
-                    errors.description ? 'border-red-400' : 'border-gray-300'
+                  className={`mt-1 block w-full rounded-md border px-3 py-2 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-cyan ${
+                    errors.description ? 'border-brand-red' : 'border-gray-300'
                   }`}
                 />
-                {errors.description ? <p className="mt-1 text-xs text-red-600">{errors.description}</p> : null}
+                {errors.description ? <p className="mt-1 text-xs text-brand-red-dark">{errors.description}</p> : null}
               </div>
 
               <div className="flex justify-end">
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="inline-flex items-center gap-2 rounded-md bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center gap-2 rounded-md bg-brand-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <SaveIcon className="h-4 w-4" />
                   {isSaving ? 'Saving…' : 'Save'}

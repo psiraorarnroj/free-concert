@@ -98,7 +98,7 @@ export default function UserHomePage() {
                     type="button"
                     onClick={() => handleCancel(concert)}
                     disabled={pendingId === concert.id}
-                    className="rounded-md bg-red-400 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-md bg-brand-red px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-red disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {pendingId === concert.id ? 'Cancelling…' : 'Cancel'}
                   </button>
@@ -107,7 +107,7 @@ export default function UserHomePage() {
                     type="button"
                     onClick={() => handleReserve(concert)}
                     disabled={pendingId === concert.id || concert.availableSeats <= 0}
-                    className="rounded-md bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-md bg-brand-cyan px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {pendingId === concert.id
                       ? 'Reserving…'

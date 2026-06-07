@@ -88,7 +88,7 @@ export default function AdminHistoryPage() {
                   <td className="px-4 py-3">
                     <span
                       className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                        entry.action === 'RESERVE' ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
+                        entry.action === 'RESERVE' ? 'bg-brand-green/10 text-brand-green' : 'bg-brand-red/10 text-brand-red'
                       }`}
                     >
                       {entry.action === 'RESERVE' ? 'Reserve' : 'Cancel'}
